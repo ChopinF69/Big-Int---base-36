@@ -1,0 +1,3 @@
+/home/lazar/Desktop/BigInt36/cmake-build-debug/CMakeFiles/BigInt36.dir
+/home/lazar/Desktop/BigInt36/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/lazar/Desktop/BigInt36/cmake-build-debug/CMakeFiles/rebuild_cache.dir
