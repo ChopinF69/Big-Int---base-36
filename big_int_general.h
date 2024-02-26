@@ -297,7 +297,7 @@ bool operator>(Big_Int_General B1 , Big_Int_General B2)
     int base_1 = B1.get_base();
     int base_2 = B2.get_base();
 
-    if(base_2 != base_1);//throw("Nu se pot compara 2 numere de baze diferite ! \n");
+    if(base_2 != base_1);
     else
     {
         size_t size_B1 = s_B1.size();
@@ -351,7 +351,7 @@ Big_Int_General operator+(Big_Int_General a , Big_Int_General b)
 {
     int t = 0, s;
     int base_1 = a.get_base(), base_2 = b.get_base(), base = std::max(base_1, base_2);
-    if (base_1 != base_2)// throw("Nu se pot adauga 2 numere de baze diferite ! ");
+    if (base_1 != base_2)
         std::runtime_error("You can't sum 2 numbers with different bases");
     int l1 = a.get_size(), l2 = b.get_size();
     l1--; l2--;
@@ -449,7 +449,7 @@ Big_Int_General operator-(Big_Int_General a , Big_Int_General b)
 {
     int base_1 = a.get_base(), base_2 = b.get_base();
     if (base_2 != base_1)
-        std::runtime_error("Nu se pot scadea din 2 baze diferite ! ");
+        std::runtime_error("You cannot substract 2 numbers with different bases ! ");
 
     if (a < b);
     //throw std::runtime_error("UNDERFLOW");
@@ -467,7 +467,7 @@ Big_Int_General operator-(Big_Int_General a , Big_Int_General b)
         char chr_1 , chr_2;
         if(l1 >= 0)
         {
-            //cifra
+            //digit
             if(s1[l1] >= '0' && s1[l1] <= '9')cifra_1 = s1[l1] - '0';
             else //este litera
             {
@@ -477,9 +477,9 @@ Big_Int_General operator-(Big_Int_General a , Big_Int_General b)
         }
         if(l2 >= 0)
         {
-            //cifra
+            //digit
             if(s2[l2] >= '0' && s2[l2] <= '9')cifra_2 = s2[l2] - '0';
-            else //este litera
+            else //is letter
             {
                 int c = s2[l2] - 'a';
                 cifra_2 += c + 10;
@@ -1097,20 +1097,6 @@ Big_Int_General random_big_int(int max_length, int base , Big_Int_General max_nu
 }
 static bool is_prime(Big_Int_General a)
 {
-    /*
-    {
-        if (n <= 3)  return n >= 2;
-        if (n % 2 == 0 || n % 3 == 0)  return false;
-        for (int d = 5; d * d <= n; d += 6)
-        {
-            if (n % d == 0 || n % (d + 2) == 0)
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-     */
     if(a.get_base() < 10)
         a = big_int_general_to_10(a);
 
@@ -1197,31 +1183,7 @@ static Big_Int_General sqrt(Big_Int_General a)
 static Big_Int_General binary_division(Big_Int_General a , Big_Int_General b)
 {
     //POOR PERFOMANCE
-    /*
-     * https://stackoverflow.com/questions/70731503/binary-division-using-templated-big-integers
-     * myuint div(const myuint& x, const myuint& y)
-{
-    if (y == 0)
-        throw "division by zero";
-
-    myuint res = 0;
-    myuint one = 1;
-
-    unsigned int xLength = x.bitLength();
-    unsigned int yLength = y.bitLength();
-
-    while (xLength > yLength)
-    {
-        res += one << (xLength - yLength - 1);
-        x -= y << (xLength - yLength - 1);
-        xLength = x.bitLength();
-    }
-
-    if (x >= y)
-        return res+1;
-    return res;
-}
-     */
+    
     Big_Int_General ans("0" , 2);
     Big_Int_General one("1" , 2);
     int initial_base = a.get_base();
