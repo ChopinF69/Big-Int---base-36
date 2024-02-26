@@ -1,4 +1,4 @@
-    print('MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM')
+   ``` print('MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM')
     print('MMMMMMMMMMMMMMWNXKOOONMMMMMMMMMMMMM')
     print('MMMMMMMMMMNkl:; .. ,,:lkWMMMMMMMMMM')
     print('MMMMMMMMXo' ',......... KMMMMMMMMM')
@@ -21,126 +21,124 @@
     print('    .......:WWWo...cWWWWK.. ....   ')
     print('     ......cWW0.....XWWWN.. ....   ')
     print('     ..... lWWc.....OWWWW,. ...   ')
-
+```
 # Big-Int---base-36
 Class for Big Int - Base 36
 
-DOCUMENTATION FOR Big_Int_General class
-IT TAKES UP TO CLASS 36 (10 digits and 26 latin characters)
+IT TAKES UP TO BASE 36 (10 digits and 26 latin characters)
 
- HOW TO USE IT - CONSTRUCTORS
- Big_Int_General - first parameter is a string with the digits of a number
-                 - second parameter is the base of that number
-  ------- EXEMPLES:
-  Big_Int_General a("123" , 10); - it is the number 123 in base 10
+ # USAGE - CONSTRUCTORS
+ Big_Int_General 
+ - first parameter is a string with the digits of a number
+ - second parameter is the base of that number
+  - EXEMPLES: <br>
+  Big_Int_General a("123" , 10); - it is the number 123 in base 10 <br>
   Big_Int_General b("e3d" , 16); - it is the number e3d(3645) in base 16
 
--------------------------------------------------------------------------
---------------------------CLASS METHODS----------------------------------
+## Class Methods
 
-Big_Int_General a("123" , 10);
-std::string digits_of_a = a.get_digits();
-int base_of_a = a.get_base();
+Big_Int_General a("123" , 10); <br>
+std::string digits_of_a = a.get_digits(); <br>
+int base_of_a = a.get_base(); <br>
 
-a.set_digits("1234") - now a will have digits 1234
+a.set_digits("1234") - now a will have digits 1234 <br>
 a.set_base(16) - now a will have base 16
 
----------------------------------------------------------------------------
------------------------------OPERATORS-------------------------------------
+## Operators
 
-1.Arithmetic operators
+- Arithmetic operators <br>
 EVERY OPERATOR IS IMPLEMENTED - ( + , += , - , -= , * , *= , / , /= )
+ <br>
+You can do : <br>
+- Big_Int_General + Big_Int_General
+- Big_Int_General + char
+- Big_Int_General + int
+- Big_Int_General + std::string  <br>
+    And by plus I mean every operation. <br>
 
-You can do :- Big_Int_General + Big_Int_General
-            - Big_Int_General + char
-            - Big_Int_General + int
-            - Big_Int_General + std::string
-    And by plus I mean every operation
+- Bool operathors <br>
+EVERY OPERATOR IS IMPLEMENTED - ( > , >= , < , <= , == , != ) <br>
 
-2.Bool operathors
-EVERY OPERATOR IS IMPLEMENTED - ( > , >= , < , <= , == , != )
+You can do only between 2 Big_Int_General <br>
 
-You can do only between 2 Big_Int_General
+- Operathor []  <br>
+Big_Int_General a("abcd");  <br>
 
-3.Operathor []
-Big_Int_General a("abcd");
+Ilustration: <br>
+char character = a[1]; -> character = 'b' <br>
 
-char character = a[1]; -> character = 'b'
+- Operathor Null <br>
+Checks if it is empty or if it is equal to 0 <br>
 
-4.Operathor Null
-Checks if it is empty or if it is equal to 0
+- Operator modulo <br>
+IMPLEMENTED % , %= <br>
 
-5.Operator modulo
-IMPLEMENTED % , %=
+You can do : <br>
+- Big_Int_General % Big_Int_General
+- Big_Int_General % int
 
-You can do :
-            - Big_Int_General % Big_Int_General
-            - Big_Int_General % int
+- Operator exponantiation <br>
+IMPLEMENTED ^ , ^= <br>
+ <br>
+You can do : <br>
+ - Big_Int_General % Big_Int_General <br>
+ - Big_Int_General % int <br> <br>
 
-6.Operator exponantiation
-IMPLEMENTED ^ , ^=
-
-You can do :
-            - Big_Int_General % Big_Int_General
-            - Big_Int_General % int
-
-7.Operators for input and output
+- Operators for input and output <br>
 I would say to do it manually because it is more intuitvely for you , but i implemented it
 
-IMPLEMENTED >> , <<
+IMPLEMENTED >> , << <br>
 
--------------------------------------------------------------------
---------------------------CONVERSIONS------------------------------
+## Conversions
 
-There are 3 functions implemented :
-static Big_Int_General big_int_general_to_10(Big_Int_General);
+There are 3 functions implemented : <br>
+```static Big_Int_General big_int_general_to_10(Big_Int_General);```<br>
 
 This function takes a parameter of Big_Int_General and it converts its digits
 to base 10
 
-static Big_Int_General base_10_to_big_int_general(Big_Int_General , int);
+```static Big_Int_General base_10_to_big_int_general(Big_Int_General , int);``` <br>
 
 This function takes a parameter of Big_Int_General that is in base 10 and
 converts its digits to the new base
 
-static Big_Int_General source_base_destination_base(Big_Int_General , int);
+```static Big_Int_General source_base_destination_base(Big_Int_General , int); ```<br>
 
 This function takes a parameter of Big_Int_General and a parameter NEW_BASE
 and convert from the original base to the new base
 
---------------------------------------------------------------------------
-----------------------------AUXILIARY FUNCTIONS---------------------------
-1.Pow function
-static Big_Int_General pow(Big_Int_General , Big_Int_General);
+# AUXILIARY FUNCTIONS
+- Pow function
+```static Big_Int_General pow(Big_Int_General , Big_Int_General);```
 
 It just makes a ^ b
 
-2.Swap function
-static void swap(Big_Int_General &, Big_Int_General &);
+- Swap function
+```static void swap(Big_Int_General &, Big_Int_General &);```
 
 Simple swap function
 
-3.Karatsuba and Binary Division
+- Karatsuba and Binary Division
 They pass the tests but these are very inefficient in term of time
 
-4.Function to check the primality
-static bool is_prime(Big_Int_General);
+- Function to check the primality
+```static bool is_prime(Big_Int_General);```
 
 It has a relatively fast implementation , i don't have the SIEVE YET
 
-5.Function to check palindrome
-static bool is_palindrome(Big_Int_General);
+- Function to check palindrome
+```static bool is_palindrome(Big_Int_General);```
 
-6.Functions for competitive programming i suppose
-static Big_Int_General gcd(Big_Int_General , Big_Int_General);
+- Functions for competitive programming i suppose
+```static Big_Int_General gcd(Big_Int_General , Big_Int_General);```
 It implements the greatest commond divisor
 
-static Big_Int_General lcm(Big_Int_General , Big_Int_General);
+```static Big_Int_General lcm(Big_Int_General , Big_Int_General);```
 It implements the least common multiplier
 
-static Big_Int_General sqrt(Big_Int_General);
+```static Big_Int_General sqrt(Big_Int_General);```
 It implements the sqrt basicfunction
 
-static Big_Int_General xorOperation(Big_Int_General a , Big_Int_General b);
-It just makes them in base 2 and then xor's them
+```static Big_Int_General xorOperation(Big_Int_General a , Big_Int_General b);```
+It just makes them in base 2 and then xor's them.
 The result will be in the initial base
